@@ -3,6 +3,8 @@ set -e
 
 cd /var/www/buseka.lk
 
+sudo chown -R ubuntu:ubuntu /var/www/buseka.lk
+
 git fetch origin
 git reset --hard origin/main
 
