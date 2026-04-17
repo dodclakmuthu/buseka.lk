@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -euxo pipefail
 
 cd /var/www/buseka.lk
 
