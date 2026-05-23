@@ -8,8 +8,8 @@ const contactChannels = [
       </svg>
     ),
     label: 'Phone',
-    value: '+94 77 104 5601',
-    href: 'tel:+94771045601',
+    value: '0711113078',
+    href: 'tel:0711113078',
     color: 'bg-blue-50 text-blue-600 border-blue-100 hover:bg-blue-100',
   },
   {
@@ -19,8 +19,8 @@ const contactChannels = [
       </svg>
     ),
     label: 'WhatsApp',
-    value: '+94 77 104 5601',
-    href: 'https://wa.me/94771045601',
+    value: '0711113078',
+    href: 'https://wa.me/94711113078',
     color: 'bg-green-50 text-green-600 border-green-100 hover:bg-green-100',
   },
   {
@@ -48,12 +48,12 @@ const contactChannels = [
   {
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 11-2-2.75V9.43a6.33 6.33 0 104.58 6.08V8.56a8.16 8.16 0 004.64 1.49V6.69z" />
       </svg>
     ),
-    label: 'LinkedIn',
-    value: 'buseka',
-    href: 'https://linkedin.com/company/buseka',
+    label: 'TikTok',
+    value: '@buseka.lk',
+    href: 'https://www.tiktok.com/@buseka.lk?_r=1&_t=ZS-96aowxS4QOS',
     color: 'bg-sky-50 text-sky-600 border-sky-100 hover:bg-sky-100',
   },
 ];

@@ -3,7 +3,7 @@ name: Deploy Buseka Landing Site
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   deploy:

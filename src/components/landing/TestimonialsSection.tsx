@@ -1,106 +1,66 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const testimonials = [
+const principles = [
   {
-    quote: "Before buseka, I was spending hours every evening going through paper records. Now I can see my entire fleet's performance in seconds from my phone.",
-    name: 'Kamal Perera',
-    role: 'Owner, 5 Buses — Colombo-Kandy Route',
-    initials: 'KP',
+    title: 'Built with Local Operations in Mind',
+    description: 'Designed around Sri Lankan private bus workflows, including daily trips, crew assignments, route activity, and owner visibility.',
     color: 'bg-blue-500',
+    initials: 'LK',
   },
   {
-    quote: "The salary calculation feature alone saved me so much time and arguments. Everything is transparent now — drivers and conductors trust the system.",
-    name: 'Nimal Fernando',
-    role: 'Owner, 3 Buses — Colombo-Galle Route',
-    initials: 'NF',
+    title: 'Focused on Daily Clarity',
+    description: 'Helps owners replace scattered paper notes with structured records for income, expenses, settlements, and fleet activity.',
     color: 'bg-green-500',
+    initials: 'DC',
   },
   {
-    quote: "I can finally see which routes are profitable and which ones need attention. buseka gave me the business insights I never had with paper records.",
-    name: 'Suresh Rajapaksa',
-    role: 'Managing Director, Lanka Express Pvt Ltd',
-    initials: 'SR',
+    title: 'Ready for Early Bus Owners',
+    description: 'Buseka is prepared for early adopters who want to modernize operations and help shape the platform as it grows.',
     color: 'bg-orange-500',
-  },
-  {
-    quote: "My conductors found the Duty App very easy to use. Even those who aren't tech-savvy picked it up in one day. The interface is that simple.",
-    name: 'Anura Bandara',
-    role: 'Owner, 8 Buses — Colombo-Kurunegala Route',
-    initials: 'AB',
-    color: 'bg-purple-500',
-  },
-  {
-    quote: "We lost 2 years of paper records in a flood. After switching to buseka, I know my data is safe in the cloud. Never going back to paper.",
-    name: 'Ranjith Silva',
-    role: 'Owner, 2 Buses — Colombo-Ratnapura Route',
-    initials: 'RS',
-    color: 'bg-red-500',
-  },
-  {
-    quote: "The daily settlement report is a game-changer. I can reconcile everything before the day ends. No more surprises or missing money.",
-    name: 'Dinesh Wickramasinghe',
-    role: 'Owner, 4 Buses — Colombo-Negombo Route',
-    initials: 'DW',
-    color: 'bg-teal-500',
+    initials: 'EA',
   },
 ];
 
 const TestimonialsSection: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
     <section className="py-20 lg:py-28 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-50 border border-amber-100 rounded-full mb-4">
             <svg className="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-4 4-4-4z" />
             </svg>
-            <span className="text-amber-600 text-sm font-medium">Testimonials</span>
+            <span className="text-amber-600 text-sm font-medium">Early Access</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-800 mb-4">
-            What Bus Owners
+            Built for the First
             <br />
-            <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">Are Saying</span>
+            <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">Digital Bus Operators</span>
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            Real feedback from bus owners who have transformed their operations with buseka.
+            We are not showing testimonials until they come from real Buseka users. For now, this is what the platform is built to deliver.
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, i) => (
+        <div className="grid md:grid-cols-3 gap-6">
+          {principles.map((item) => (
             <div
-              key={i}
-              className={`bg-white rounded-2xl p-6 border transition-all duration-300 cursor-pointer ${
-                activeIndex === i
-                  ? 'border-orange-200 shadow-xl shadow-orange-50 scale-[1.02]'
-                  : 'border-slate-100 hover:border-slate-200 hover:shadow-lg'
-              }`}
-              onClick={() => setActiveIndex(i)}
+              key={item.title}
+              className="bg-white rounded-2xl p-6 border border-slate-100 hover:border-orange-100 hover:shadow-xl hover:shadow-orange-50 transition-all duration-300"
             >
-              {/* Quote icon */}
-              <svg className="w-8 h-8 text-orange-200 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.563 6.068 6 8.789 6 11h4v10H0z" />
-              </svg>
-              
-              <p className="text-slate-600 leading-relaxed mb-6 text-sm">
-                "{testimonial.quote}"
-              </p>
-              
-              <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 ${testimonial.color} rounded-full flex items-center justify-center text-white text-sm font-bold`}>
-                  {testimonial.initials}
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-slate-800">{testimonial.name}</p>
-                  <p className="text-xs text-slate-400">{testimonial.role}</p>
-                </div>
+              <div className={`w-11 h-11 ${item.color} rounded-full flex items-center justify-center text-white text-sm font-bold mb-5`}>
+                {item.initials}
               </div>
+              <h3 className="text-lg font-bold text-slate-800 mb-3">{item.title}</h3>
+              <p className="text-sm leading-relaxed text-slate-500">{item.description}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10 rounded-2xl border border-orange-100 bg-orange-50/70 p-6 text-center">
+          <p className="text-sm font-semibold text-orange-700">
+            Be among the first bus owners to modernize daily operations with Buseka.
+          </p>
         </div>
       </div>
     </section>

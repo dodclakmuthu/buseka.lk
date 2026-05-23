@@ -1,15 +1,11 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '@/contexts/AuthContext';
+import { getAdminDashboardUrl } from '@/lib/api';
 
 const DASHBOARD_IMG = 'https://d64gsuwffb70l.cloudfront.net/6864ba71699483ceb125ae36_1775497842510_b66af125.png';
 const MOBILE_IMG = 'https://d64gsuwffb70l.cloudfront.net/6864ba71699483ceb125ae36_1775497912978_fef5b37f.png';
 const HERO_BG = 'https://d64gsuwffb70l.cloudfront.net/69d3f2d50bb6bbc8fdb7c970_1775498053211_859f202c.png';
 
 const HeroSection: React.FC = () => {
-  const { user, openAuthModal } = useAuth();
-  const navigate = useNavigate();
-
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -17,11 +13,7 @@ const HeroSection: React.FC = () => {
 
   const handleDashboardClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (user) {
-      navigate('/dashboard');
-    } else {
-      openAuthModal('login');
-    }
+    window.location.assign(getAdminDashboardUrl());
   };
 
   return (
@@ -71,7 +63,7 @@ const HeroSection: React.FC = () => {
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
                 </svg>
-                {user ? 'Go to Dashboard' : 'Admin Dashboard'}
+                Admin Dashboard
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
